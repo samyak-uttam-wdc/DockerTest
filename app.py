@@ -1,6 +1,6 @@
 from flask import Flask, request, make_response
 
-from sql_connector import execute_sql
+from sql_connector import *
 
 app = Flask(__name__)
 
@@ -25,5 +25,12 @@ def insert():
 	except:
 		return 'Some error occured while executing the sql query.'
 
+@app.route('/', methods = ['GET'])
+def home():
+	try:
+		return test()
+	except:
+		return "Something went wrong."
+
 if __name__ == '__main__':
-	app.run(debug=False)
+	app.run(host='0.0.0.0', port=5000)

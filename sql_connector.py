@@ -52,3 +52,6 @@ def execute_sql(sql_command, query_type = 'select', result_set_count = 1):
 		raise
 	finally:
 		conn.close()
+
+def test():
+	return 'Home'
